@@ -15,7 +15,6 @@ class Kamal::Commands::Accessory < Kamal::Commands::Base
       "--name", service_name,
       "--detach",
       "--restart", "unless-stopped",
-      "--network", "kamal",
       *config.logging_args,
       *publish_args,
       *env_args,
