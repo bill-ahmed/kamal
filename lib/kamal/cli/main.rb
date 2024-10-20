@@ -35,8 +35,8 @@ class Kamal::Cli::Main < Kamal::Cli::Base
       with_lock do
         run_hook "pre-deploy", secrets: true
 
-        say "Ensure kamal-proxy is running...", :magenta
-        invoke "kamal:cli:proxy:boot", [], invoke_options
+        say "[SKIP] Ensure kamal-proxy is running...", :magenta
+        # invoke "kamal:cli:proxy:boot", [], invoke_options
 
         say "Detect stale containers...", :magenta
         invoke "kamal:cli:app:stale_containers", [], invoke_options.merge(stop: true)
